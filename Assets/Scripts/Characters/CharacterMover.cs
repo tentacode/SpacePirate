@@ -15,7 +15,6 @@ public class CharacterMover : MonoBehaviour
 	void Update()
     {
         float horizontalAxis = Input.GetAxis("Horizontal");
-        Debug.Log(horizontalAxis);
 
         animator.SetFloat("horizontalAxis", horizontalAxis);
 
@@ -33,7 +32,7 @@ public class CharacterMover : MonoBehaviour
         moveValue = moveValue % 625;
         moveValue = moveValue / 1000;
 
-        //moveValue = Mathf.Round(moveValue * aproximation) / aproximation;
+        moveValue = Mathf.Round(moveValue * aproximation) / aproximation;
 
         this.transform.position += Vector3.right * moveValue;
     }
